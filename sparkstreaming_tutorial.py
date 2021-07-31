@@ -29,3 +29,6 @@ atmVisitsSelectStarDF.selectExpr("cast(transactionId as string) as key", "cast(l
     .option("checkpointLocation", "/tmp/kafkacheckpoint")\
     .start()\
     .awaitTermination()
+
+# view the kafka consuming topic
+# ./kafka-console-consumer --bootstrap-server localhost:9092 --topic atm-visits-updates --from-beginning
