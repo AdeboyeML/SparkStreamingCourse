@@ -1,3 +1,4 @@
+
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import from_json, to_json, col, unbase64, base64, split, expr
 from pyspark.sql.types import StructField, StructType, StringType, BooleanType, ArrayType, DateType
@@ -46,7 +47,7 @@ vehicleCheckinRawStreamingDF = spark\
     .readStream\
     .format("kafka")\
     .option("kafka.bootstrap.servers", "localhost:9092")\
-    .option("subscribe", "vehicle-check-in")\
+    .option("subscribe", "check-in")\
     .option("startingOffsets", "earliest")\
     .load()
 
@@ -59,7 +60,7 @@ vehicleCheckinStreamingDF.withColumn("value", from_json("value", vehicleCheckinS
 # query data from temp view
 vehicleCheckinSelectStarDF = spark.sql("select truckNumber as checkinTruckNumber, reservationId, locationName, status from VehicleCheckin")
 
-checkinStatusDF = vehicleCheckinStatusSelectStarDF.join(vehicleCheckinSelectStarDF, expr("""
+checkinStatusDF = vehicleStatusSelectStarDF.join(vehicleCheckinSelectStarDF, expr("""
 statusTruckNumber = checkinTruckNumber"""))
 
 checkinStatusDF.writeStream.outputMode("append").format("console").start().awaitTermination()
