@@ -12,3 +12,8 @@
 - Spark View: 	in a Spark application, a session-bound representation of data in a certain configuration
 - Topic 	In a Kafka configuration, a channel of communication; often representing similar or related data; sometimes called a mailbox.
 - Zookeeper 	An open-source technology that enables semi-autonomous healing of a server cluster.
+- Join 	To connect two data collections by referencing a field they share in common, or the state which connects two data collections by referencing a common field.
+- JSON 	JavaScript Object Notation; originally created to serialize objects in JavaScript, a data serialization standard consisting of keys and values.
+- Spark View 	In a Spark application, a session-bound representation of data in a certain configuration.
+- StructField 	A Python class used to create a typed field in a StructType.
+- StructType 	A Spark class that defines the schema for a DataFrame.
