@@ -79,7 +79,6 @@ paymentStreamingDF = spark.sql("select reservationId as paymentReservationId, da
 
 paymentReservationStreamingDF = reservationStreamingDF.join(paymentStreamingDF, 
                                                             expr(""" reservationId = paymentReservationId
-                                                            """),
-                                                           "leftOuter"
+                                                            """)
                                                            )
 paymentReservationStreamingDF.writeStream.outputMode("append").format("console").start().awaitTermination()
