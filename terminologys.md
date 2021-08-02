@@ -17,3 +17,7 @@
 - Spark View 	In a Spark application, a session-bound representation of data in a certain configuration.
 - StructField 	A Python class used to create a typed field in a StructType.
 - StructType 	A Spark class that defines the schema for a DataFrame.
+- Base64 	Base64 is an encoding format used by computers to transmit and store information.
+- Kafka Connect 	Kafka Connect is part of the Confluent Kafka distribution; it is the component responsible for providing a path from an external system (a source) to a Kafka topic or from a Kafka topic to an external system (a sink).
+- Redis 	Redis is a database used primarily for caching; this means it is optimized for fast reads and writes.
+- Source Connector 	A Source Connector provides a connection from an outside system (a source) to a Kafka topic.
